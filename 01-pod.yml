@@ -1,8 +1,12 @@
-apiVersion: v1                # Specifies the API version to use (v1 for basic Kubernetes objects like Pod).
-kind: Pod                     # Defines the type of Kubernetes object (Pod in this case).
+apiVersion: v1
+kind: ClusterConfig
 metadata:
-  name: pod-1                 # The name of the Pod, which must be unique within the namespace.
-spec:
-  containers:                 # A list of containers that will run in the Pod.
-  - name: nginx               # The name of the container for identification.
-    image: nginx              # The Docker image for the container (nginx in this case).
+  name: expense
+  region: us-east-1
+managedNodeGroups:
+  - name:  expense
+    instanceType: t2.micro
+    minSize: 1
+    maxSize: 1
+    spot: true
+    desiredCapacity: 3
