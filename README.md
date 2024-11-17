@@ -107,3 +107,35 @@ kubectl describe pod <name of the pod >
 ```bash
 kubectl describe pod nginx
 ``` 
+************************************************************************************************
+
+# **connect running container**
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: expense
+  namespace: expense
+spec:
+  containers:
+#    - name: nginx
+#      image: nginx:latest
+#      ports:
+#        - containerPort: 80
+    - name: tomcat
+      image: tomcat:latest
+      ports:
+        - containerPort: 8080
+```
+
+
+```bash
+kubectl exec -it nginx -c tomcat -- bash
+```
+- `nginx`: This is the **name of the pod** you're targeting. Replace it with your actual pod name if different.
+
+- If the pod only has one container, you can simplify the command to:
+
+```bash
+kubectl exec -it tomcat -- bash
+```
