@@ -5,7 +5,7 @@ metadata:
   region: us-east-1
 managedNodeGroups:
   - name:  expense
-    instanceType: t2.micro
+    instanceType:
     minSize: 1
     maxSize: 1
     spot: true
