@@ -9,7 +9,10 @@ spec:
       image: nginx:latest
       ports:
         - containerPort: 80
-    - name: tomcat
-      image: tomcat:latest
-      ports:
-        - containerPort: 8080
+#    - name: tomcat
+#      image: tomcat:latest
+#      ports:
+#        - containerPort: 8080
+# kubectl port-forward pod/nginx 80:80 -n expense
+# kubectl port-forward pod/tomcat 8080:8080 -n expense &
+#fg
