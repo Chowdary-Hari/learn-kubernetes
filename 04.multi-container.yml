@@ -11,8 +11,14 @@ spec:
 #        - containerPort: 80
     - name: centos
       image: centos:latest
-      ports:
-        - containerPort: 8080
+  
+#  ➜  learn-kubernetes git:(main) kubectl get pods
+#  NAME      READY   STATUS             RESTARTS      AGE
+#  expense   0/1     CrashLoopBackOff   2 (26s ago)   60s
+#  ➜  learn-kubernetes git:(main) kubectl get pods
+
+
+
 # kubectl port-forward pod/nginx 80:80 -n expense
 # kubectl port-forward pod/tomcat 8080:8080 -n expense &
 #fg
