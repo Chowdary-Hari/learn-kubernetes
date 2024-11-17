@@ -14,7 +14,7 @@ eksctl create cluster -f cluster.yaml
 ```bash
 eksctl delete cluster -f cluster.yaml
 ```
-## **----------------------------------------------------------------**
+************************************************************************************************
 # **create namespace**
 ```bash
 kubectl create namespace < namespace name>
@@ -45,7 +45,7 @@ kubectl delete namespace expense
 ```
 
 
-## **----------------------------------------------------------------**
+************************************************************************************************
 
 ## Example
 ```yaml
@@ -78,8 +78,12 @@ kubectl delete -f <file-name>.yaml
 kubectl delete -f namespace.yaml
 ```
 
+## delete pod && running containers 
+```bash
+kubectl delete pod expense
+```
 
-## **----------------------------------------------------------------**
+************************************************************************************************
 * **display nods in k8 cluster**
 ```shell
 kubectl get nodes
@@ -130,12 +134,12 @@ spec:
 
 
 ```bash
-kubectl exec -it nginx -c tomcat -- bash
+kubectl exec -it nginx -c nginx -- bash
 ```
 - `nginx`: This is the **name of the pod** you're targeting. Replace it with your actual pod name if different.
 
 - If the pod only has one container, you can simplify the command to:
 
 ```bash
-kubectl exec -it tomcat -- bash
+kubectl exec -it nginx -- bash
 ```

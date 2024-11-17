@@ -5,10 +5,14 @@ metadata:
   namespace: expense
 spec:
   containers:
-    - name: centos
-      image: centos:latest
-      command: [ "sleep", "3600" ]  # Keeps the container running for 1 hour
-
+    - name: nginx
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+    - name: tomcat
+      image: tomcat:latest
+      ports:
+        - containerPort: 8080
 
 
 
