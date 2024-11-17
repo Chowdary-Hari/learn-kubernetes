@@ -118,10 +118,10 @@ metadata:
   namespace: expense
 spec:
   containers:
-#    - name: nginx
-#      image: nginx:latest
-#      ports:
-#        - containerPort: 80
+    - name: nginx
+      image: nginx:latest
+      ports:
+        - containerPort: 80
     - name: tomcat
       image: tomcat:latest
       ports:
