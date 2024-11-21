@@ -1,0 +1,14 @@
+apiVersion: v1
+metadata:
+  name: configmap
+kind: ConfigMap
+# to load config
+data:
+  name: chowdary_hari
+  age: "25"
+  email: chowdary@gmail.com
+
+
+# get all the configmaps data --> kubectl get configmap
+
+# see all configmap data      --> kubectl describe -f 10.config-map.yml
