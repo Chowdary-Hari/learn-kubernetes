@@ -1,11 +1,16 @@
 apiVersion : v1
-kind: pod
+kind: Pod
 metadata:
   name: configmap-referring
 spec:
   containers:
     - name: nginx
       image: nginx:latest
+      envFrom:
+        - configMapRef:
+            name: configmap
+            optional: true
+            # Uncomment the following lines to enable automatic reloading of configmap changes
       env:
         - name: name
           valueFrom:
@@ -17,6 +22,3 @@ spec:
             configMapKeyRef:
               name: configmap
               key: age
-
-#      envFrom:
-#        - configMapRef:
