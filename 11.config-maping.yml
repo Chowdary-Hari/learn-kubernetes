@@ -10,14 +10,14 @@ spec:
         - configMapRef:
             name: configmap # The name of the ConfigMap to reference (metadata.name of the ConfigMap)
             optional: true  # If true, the pod will still start even if the ConfigMap is missing
-      env:                  # Defines individual environment variables for the container
-        - name: name
-          valueFrom:
-            configMapKeyRef:
-              name: configmap
-              key: name
-        - name: age
-          valueFrom:
-            configMapKeyRef:
-              name: configmap
-              key: age
+#      env:                  # Defines individual environment variables for the container
+#        - name: name
+#          valueFrom:
+#            configMapKeyRef:
+#              name: configmap
+#              key: name
+#        - name: age
+#          valueFrom:
+#            configMapKeyRef:
+#              name: configmap
+#              key: age
