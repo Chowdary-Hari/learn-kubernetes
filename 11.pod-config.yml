@@ -10,15 +10,14 @@ spec:
         - configMapRef:
             name: configmap
             optional: true
-            # Uncomment the following lines to enable automatic reloading of configmap changes
-      env:
-        - name: name
-          valueFrom:
-            configMapKeyRef:
-              name: configmap
-              key: name
-        - name: age
-          valueFrom:
-            configMapKeyRef:
-              name: configmap
-              key: age
+#      env:
+#        - name: name
+#          valueFrom:
+#            configMapKeyRef:
+#              name: configmap
+#              key: name
+#        - name: age
+#          valueFrom:
+#            configMapKeyRef:
+#              name: configmap
+#              key: age
