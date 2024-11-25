@@ -24,6 +24,19 @@ kubectl create namespace < namespace name>
 ```bash
 kubectl create namespace expense
 ```
+# Set the Namespace for the Current Context
+
+```shell
+kubectl config set-context --current --namespace=<namespace-name>
+```
+
+# Verify the Configuration
+
+```shell
+kubectl config view --minify | grep namespace:
+```
+---
+
 
 # **get created namespace**
 ```bash
@@ -153,7 +166,10 @@ kubectl exec -it nginx -- bash
 echo "alias k='microk8s kubectl'" >> ~/.zshrc
 ```
 pod is a subset of replicaset
-replicaset  subset of a deplyment
+replicaset  subset of a deployment
 
+cluster ip << node port << loadbalancing  > Service
 
-p¸od < 
+container <<::pod << replicaset << deployment 
+
+pod to pod comunation can be achive thre the service it is loadbalancing all so. > Service    
