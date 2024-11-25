@@ -164,6 +164,8 @@ kubectl exec -it nginx -- bash
 ```
 ```shell
 echo "alias k='microk8s kubectl'" >> ~/.zshrc
+echo "alias ks='source <(kubectl completion zsh) && source ~/.zshrc'" >> ~/.zshrc
+source ~/.zshrc
 ```
 pod is a subset of replicaset
 replicaset  subset of a deployment

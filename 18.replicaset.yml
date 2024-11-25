@@ -3,9 +3,21 @@ kind: ReplicaSet
 metadata:
   name: nginx
   namespace: expense
-  labels:
+  labels:        # Labels for the ReplicaSet itself
     app: nginx
     tier: frontend
 spec:
   replicas: 3
-  
+  selector:
+    matchLabels:  # Labels to match for selecting and managing Pods
+      app: nginx
+      tier: frontend
+  template:
+    metadata:
+      labels:     # Labels applied to Pods created by this ReplicaSet
+        app: nginx
+        tier: frontend
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
