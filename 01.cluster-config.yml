@@ -10,3 +10,4 @@ managedNodeGroups:
     maxSize: 1
     spot: true
     desiredCapacity: 3
+    

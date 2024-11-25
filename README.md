@@ -173,3 +173,10 @@ cluster ip << node port << loadbalancing  > Service
 container <<::pod << replicaset << deployment 
 
 pod to pod comunation can be achive thre the service it is loadbalancing all so. > Service    
+
+---
+# sets 
+1. replicaset 
+2. deploymentSet
+3. DaemonSet
+4. StatefulSet

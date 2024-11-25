@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx
+  namespace: expense
+  labels:
+    app: nginx
+    tier: frontend
+spec:
+  replicas: 3
+  
