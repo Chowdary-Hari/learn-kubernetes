@@ -143,3 +143,17 @@ kubectl exec -it nginx -c nginx -- bash
 ```bash
 kubectl exec -it nginx -- bash
 ```
+
+
+```shell
+(base) ➜  notebook git:(main) git reset --hard 
+(base) ➜  notebook git:(main) git clean -fd 
+```
+```shell
+echo "alias k='microk8s kubectl'" >> ~/.zshrc
+```
+pod is a subset of replicaset
+replicaset  subset of a deplyment
+
+
+p¸od < 
