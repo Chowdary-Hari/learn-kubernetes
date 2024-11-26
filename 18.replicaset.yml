@@ -1,23 +1,22 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: nginx
-  namespace: expense
-  labels:        # Labels for the ReplicaSet itself
-    app: nginx
+  name: frontend
+  labels:
+    app: guestbook
     tier: frontend
 spec:
   replicas: 3
   selector:
-    matchLabels:  # Labels to match for selecting and managing Pods
-      app: nginx
+    matchLabels:
       tier: frontend
+      app: guestbook
   template:
     metadata:
-      labels:     # Labels applied to Pods created by this ReplicaSet
-        app: nginx
+      labels:
         tier: frontend
+        app: guestbook
     spec:
       containers:
         - name: nginx
-          image: nginx:latest
+          image: nginx

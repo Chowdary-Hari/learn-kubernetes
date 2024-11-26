@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  namespace: expense
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: chandrahari296/frontend:v1.0
+          ports:
+            - containerPort: 80
+
+
+#---
+#
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: nginx-loadbalancer
+#  labels:
+#    namespace: expense
+#spec:
+#  selector:
+#    app: nginx
+#  type: LoadBalancer
+#  ports:
+#    - protocol: TCP
+#      port: 80
+#      targetPort: 80

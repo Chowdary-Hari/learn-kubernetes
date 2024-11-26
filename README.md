@@ -172,8 +172,8 @@ replicaset  subset of a deployment
 
 cluster ip << node port << loadbalancing  > Service
 
-container <<::pod << replicaset << deployment 
-
+container <<::pod << replicaset << deployment
+pod subset of a replicaset subset of a deployment
 pod to pod comunation can be achive thre the service it is loadbalancing all so. > Service    
 
 ---
