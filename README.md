@@ -182,3 +182,5 @@ pod to pod comunation can be achive thre the service it is loadbalancing all so.
 2. deploymentSet
 3. DaemonSet
 4. StatefulSet
+
+#   
