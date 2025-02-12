@@ -1,4 +1,15 @@
 # learn-kubernetes
+
+
+# **Kubernetes API Resource Kinds**:  
+   If you are asking about the different resource types (kinds) in Kubernetes, you can list them using:
+   ```sh
+   kubectl api-resources
+   ```
+
+---
+
+
 # **create cluster**
 
 ```bash
