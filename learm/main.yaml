@@ -40,8 +40,8 @@ metadata:
   name: env-configmap
 spec:
   containers:
-    - name: node
-      image: node
+    - name:  almalinux
+      image: almalinux:9
       envFrom:
         - configMapRef:
             name: nginx  # Corrected this line
