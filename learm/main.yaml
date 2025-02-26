@@ -1,4 +1,4 @@
-# config map
+# ConfigMap
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -7,32 +7,32 @@ metadata:
 data:
   age: "25"
   name: "hari"
-  city: "hydrabad"
+  city: "hyderabad"
   country: "india"
 ---
-# configmap key references
+# ConfigMap key references
 apiVersion: v1
-kind: pod
+kind: Pod
 metadata:
   namespace: expense
   name: nginx
 spec:
   containers:
-  - name: nginx
-    image: nginx:latest
-    env:
-      - name: AGE
-        valueFrom:
-          configMapKeyRef:
-            name: nginx
-            key: age
-      - name: NAME
-        valueFrom:
-          configMapKeyRef:
-            name: nginx
-            key: name
+    - name: nginx
+      image: nginx:latest
+      env:
+        - name: AGE
+          valueFrom:
+            configMapKeyRef:
+              name: nginx
+              key: age
+        - name: NAME
+          valueFrom:
+            configMapKeyRef:
+              name: nginx
+              key: name
 ---
-# config map file references
+# ConfigMap file references
 apiVersion: v1
 kind: Pod
 metadata:
@@ -44,4 +44,4 @@ spec:
       image: node
       envFrom:
         - configMapRef:
-            name: nginx
+            name: nginx  # Corrected this line
