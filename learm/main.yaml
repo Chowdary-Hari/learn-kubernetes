@@ -1,0 +1,47 @@
+# config map
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: expense
+  name: nginx
+data:
+  age: "25"
+  name: "hari"
+  city: "hydrabad"
+  country: "india"
+---
+# configmap key references
+apiVersion: v1
+kind: pod
+metadata:
+  namespace: expense
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    env:
+      - name: AGE
+        valueFrom:
+          configMapKeyRef:
+            name: nginx
+            key: age
+      - name: NAME
+        valueFrom:
+          configMapKeyRef:
+            name: nginx
+            key: name
+---
+# config map file references
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: expense
+  name: env-configmap
+spec:
+  containers:
+    - name: node
+      image: node
+      envFrom:
+        - configMapRef:
+            name: nginx
