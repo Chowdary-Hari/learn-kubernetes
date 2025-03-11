@@ -1,47 +1,18 @@
-# ConfigMap
-apiVersion: v1
-kind: ConfigMap
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  namespace: expense
-  name: nginx
-data:
-  age: "25"
-  name: "hari"
-  city: "hyderabad"
-  country: "india"
----
-# ConfigMap key references
-apiVersion: v1
-kind: Pod
-metadata:
-  namespace: expense
-  name: nginx
+  name: my-deployment
 spec:
-  containers:
-    - name: nginx
-      image: nginx:latest
-      env:
-        - name: AGE
-          valueFrom:
-            configMapKeyRef:
-              name: nginx
-              key: age
-        - name: NAME
-          valueFrom:
-            configMapKeyRef:
-              name: nginx
-              key: name
----
-# ConfigMap file references
-apiVersion: v1
-kind: Pod
-metadata:
-  namespace: expense
-  name: env-configmap
-spec:
-  containers:
-    - name:  almalinux
-      image: almalinux:9
-      envFrom:
-        - configMapRef:
-            name: nginx  # Corrected this line
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: my-container
+          image: nginx
+
